@@ -1,0 +1,12 @@
+mutation ContactForm($name: String!, $email: String!, $message: String!) {
+  contactForm(
+    input: {
+      clientMutationId: "contact-form"
+      nameSurname: $name
+      email: $email
+      message: $message
+    }
+  ) {
+    message
+  }
+}

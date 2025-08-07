@@ -1,0 +1,12 @@
+@import "../../../styles/lib";
+.RatingStars {
+  display: flex;
+  &__star {
+    width: 18px;
+    height: 18px;
+    svg {
+      fill: $orange;
+      stroke-width: 5;
+    }
+  }
+}

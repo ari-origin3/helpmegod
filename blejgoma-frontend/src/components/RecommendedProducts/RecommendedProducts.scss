@@ -1,0 +1,43 @@
+@import "../../styles/lib";
+.RecommendedProducts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 675px;
+  @include small-desktop {
+    max-width: 590px;
+  }
+  @include tablet {
+    max-width: unset;
+  }
+  .ProductItem {
+    margin-top: 10px;
+  }
+
+  .slick-dots {
+    top: -38px;
+    right: 10px;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  &__heading {
+    background-color: $orange;
+    color: #fff;
+    padding: 10px 12px;
+    text-transform: uppercase;
+    h3 {
+      font-size: 22px;
+      line-height: 22px;
+      font-weight: 700;
+      margin: 0;
+    }
+  }
+  &__skeleton {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

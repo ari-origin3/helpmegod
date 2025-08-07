@@ -1,0 +1,70 @@
+@import "../../styles/lib";
+.FindTires {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 426px;
+  background-color: #eee;
+  background-image: url(../../assets/images/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 80px;
+
+  &--moto {
+    height: unset;
+  }
+  @include mobile {
+    padding-top: 110px;
+  }
+  &__tabs_nav {
+    ul {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+    }
+  }
+
+  &__tab {
+    height: 40px;
+    width: 471px;
+    padding: 9px 20px;
+    background-color: $dark-gray;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    &:hover {
+      background-color: lighten($dark-gray, 5);
+    }
+  }
+  &__tab--first {
+    text-align: right;
+    margin-right: 1px;
+  }
+  &__tab--active {
+    position: relative;
+    background-color: $orange;
+    &::after {
+      position: absolute;
+      content: "";
+      background-color: $orange;
+      width: 20px;
+      height: 20px;
+      bottom: -10px;
+      right: 25px;
+      transform: rotate(45deg);
+    }
+    &:hover {
+      background-color: lighten($orange, 5);
+    }
+    &:hover::after {
+      background-color: lighten($orange, 5);
+    }
+  }
+  &__tab--right {
+    &::after {
+      left: 25px;
+    }
+  }
+}

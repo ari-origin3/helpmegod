@@ -1,0 +1,31 @@
+@import "../../../styles/lib";
+
+.ScrollWrapper {
+  position: relative;
+  width: 100%;
+  &__btn {
+    .Button {
+      position: fixed;
+      bottom: 30px;
+      left: 100px;
+      z-index: 1;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      @include mobile {
+        width: 80px;
+        height: 80px;
+        left: 14px;
+      }
+      .Icon {
+        margin: 0;
+        margin-bottom: 5px;
+        height: 20px;
+        transform: rotateZ(270deg);
+        @include mobile {
+          height: 30px;
+        }
+      }
+    }
+  }
+}

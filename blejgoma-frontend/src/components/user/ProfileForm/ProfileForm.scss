@@ -1,0 +1,12 @@
+.ProfileForm {
+  &__wrapper {
+    margin: 0 auto;
+  }
+  .form-group {
+    margin-bottom: 17px;
+  }
+  &__submit_btn {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+}

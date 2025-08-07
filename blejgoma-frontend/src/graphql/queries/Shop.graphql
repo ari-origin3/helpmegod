@@ -1,0 +1,68 @@
+query getAllFilters {
+  paDiameters(first: 1000, where: { hideEmpty: true }) {
+    nodes {
+      id
+      name
+      slug
+    }
+  }
+  paHeights(first: 1000, where: { hideEmpty: true }) {
+    nodes {
+      id
+      name
+      slug
+    }
+  }
+  paSeasons(first: 1000, where: { hideEmpty: true }) {
+    nodes {
+      id
+      name
+      slug
+    }
+  }
+  productCategories(first: 1000, where: { hideEmpty: true }) {
+    nodes {
+      id
+      slug
+      name
+    }
+  }
+  productManufacturers(first: 1000, where: { hideEmpty: true }) {
+    nodes {
+      id
+      name
+      slug
+    }
+  }
+  paWidths(first: 1000, where: { hideEmpty: true }) {
+    nodes {
+      id
+      name
+      slug
+    }
+  }
+}
+
+query getShopProducts(
+  $limit: Int
+  $after: String
+  $category: [String]
+  $taxonomyFilterInput: [ProductTaxonomyFilterInput]
+) {
+  products(
+    first: $limit
+    after: $after
+    where: {
+      categoryIn: $category
+      taxonomyFilter: { or: $taxonomyFilterInput }
+    }
+  ) {
+    nodes {
+      ...Product
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

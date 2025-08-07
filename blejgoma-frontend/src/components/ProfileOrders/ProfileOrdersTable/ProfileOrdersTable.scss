@@ -1,0 +1,30 @@
+.ProfileOrdersTable {
+  &__product {
+    display: flex;
+    max-height: 95px;
+  }
+  &__image {
+    width: 80px;
+    margin-right: 10px;
+    min-height: 85px;
+    cursor: pointer;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  &__more_images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  &__status {
+    font-weight: 600;
+  }
+  &__more {
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,22 @@
+query getContactInfo {
+  generalOptions {
+    generalOptions {
+      contact {
+        emails
+        workingHours
+        phoneInformation
+      }
+    }
+  }
+}
+
+query getPageByID($id: Int) {
+  pages(where: { id: $id }) {
+    nodes {
+      title
+      pageFields {
+        albanianContent
+      }
+    }
+  }
+}

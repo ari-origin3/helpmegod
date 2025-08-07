@@ -1,0 +1,43 @@
+@import "../../../styles/lib";
+.FindMotoTires {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  @include mobile {
+    height: 100%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &__button {
+    grid-column: 4/5;
+    grid-row: 1/5;
+    place-self: end;
+    @include mobile {
+      grid-row: 5/6;
+      grid-column: 1/4;
+    }
+  }
+  &__checkbox {
+    white-space: nowrap;
+    grid-column: 1/5;
+    margin: 0;
+    @include mobile {
+      grid-column: 1/4;
+    }
+  }
+  &__checkbox--front {
+    grid-row: 1/2;
+  }
+  &__checkbox--rear {
+    grid-row: 3/4;
+  }
+  &__front_wheel_filters {
+    display: flex;
+    flex: 1 1 100%;
+    grid-column: 1/5;
+    grid-row: 2/3;
+    width: 100%;
+  }
+  &__rear_wheel_filters {
+    display: flex;
+  }
+}

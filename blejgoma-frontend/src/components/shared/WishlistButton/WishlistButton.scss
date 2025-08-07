@@ -1,0 +1,34 @@
+@import "./src/styles/lib";
+
+.WishListButton {
+  border: 0;
+  background: transparent;
+  .Icon {
+    height: unset;
+  }
+  &__icon--filled {
+    path {
+      stroke: $orange;
+      fill: $orange;
+    }
+  }
+  &:focus {
+    -webkit-animation: heartbeat 1.5s ease-in-out both;
+    animation: heartbeat 1.5s ease-in-out both;
+  }
+
+  &--square {
+    background-color: $orange;
+    .Icon {
+      path {
+        stroke: #fff;
+      }
+    }
+    .WishListButton__icon--filled {
+      path {
+        stroke: #fff;
+        fill: #fff;
+      }
+    }
+  }
+}

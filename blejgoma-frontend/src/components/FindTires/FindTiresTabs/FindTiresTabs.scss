@@ -1,0 +1,65 @@
+@import "../../../styles/lib";
+.FindTiresTabs {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  @include mobile {
+    width: 100%;
+  }
+  &__tab {
+    height: 40px;
+    width: 471px;
+    padding: 9px 20px;
+    background-color: $dark-gray;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    &:hover {
+      background-color: lighten($dark-gray, 5);
+    }
+
+    @include mobile {
+      font-size: 13px;
+      padding: 10px;
+      width: 100%;
+    }
+    @media (max-width: 321px) {
+      font-size: 12px;
+      white-space: nowrap;
+    }
+  }
+
+  &__tab--active {
+    position: relative;
+    background-color: $orange;
+
+    &::after {
+      position: absolute;
+      content: "";
+      background-color: $orange;
+      width: 20px;
+      height: 20px;
+      bottom: -10px;
+      right: 25px;
+      transform: rotate(45deg);
+    }
+
+    &:hover {
+      background-color: lighten($orange, 5);
+    }
+    &:hover::after {
+      background-color: lighten($orange, 5);
+    }
+  }
+  &__tab--one {
+    text-align: right;
+    margin-right: 1px;
+  }
+
+  &__tab--two {
+    &::after {
+      left: 25px;
+    }
+  }
+}

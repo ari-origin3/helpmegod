@@ -1,0 +1,23 @@
+mutation addItemToWishlist($ids: [Int], $userId: Int) {
+  addToWishlist(
+    input: {
+      clientMutationId: "add-item-to-wishlist"
+      ids: $ids
+      userID: $userId
+    }
+  ) {
+    message
+  }
+}
+
+mutation removeItemFromWishlist($productId: Int, $userId: Int) {
+  removeFromWishlist(
+    input: {
+      clientMutationId: "remove-item-from-wishlist"
+      id: $productId
+      userID: $userId
+    }
+  ) {
+    message
+  }
+}

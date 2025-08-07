@@ -1,0 +1,179 @@
+mutation login($username: String!, $password: String!) {
+  login(input: { username: $username, password: $password }) {
+    customer {
+      id
+      firstName
+      email
+      lastName
+      billing {
+        phone
+      }
+      jwtRefreshToken
+      jwtAuthToken
+    }
+    user {
+      wishListProducts {
+        wishlistProducts
+      }
+      databaseId
+    }
+  }
+}
+
+mutation registerUser(
+  $name: String!
+  $surname: String!
+  $email: String!
+  $password: String!
+  $address: String!
+  $city: String!
+  $phone: String!
+) {
+  registerCustomer(
+    input: {
+      username: $email
+      firstName: $name
+      lastName: $surname
+      email: $email
+      password: $password
+      billing: {
+        firstName: $name
+        lastName: $surname
+        city: $city
+        address1: $address
+        phone: $phone
+      }
+    }
+  ) {
+    customer {
+      id
+      firstName
+      lastName
+      databaseId
+      email
+      jwtAuthToken
+      jwtRefreshToken
+      billing {
+        phone
+      }
+    }
+    viewer {
+      wishListProducts {
+        wishlistProducts
+      }
+    }
+  }
+}
+
+mutation updateProfile(
+  $id: ID
+  $firstName: String
+  $lastName: String
+  $telephone: String
+  $email: String
+) {
+  updateCustomer(
+    input: {
+      clientMutationId: "update-customer-profile"
+      id: $id
+      firstName: $firstName
+      lastName: $lastName
+      email: $email
+      billing: { phone: $telephone }
+    }
+  ) {
+    customer {
+      id
+      displayName
+      email
+      databaseId
+      lastName
+      username
+      firstName
+    }
+  }
+}
+
+mutation updateAddress(
+  $id: ID
+  $billingFirstName: String
+  $billingLastName: String
+  $billingCity: String
+  $billingAddress: String
+  $billingPhone: String
+  $shippingFirstName: String
+  $shippingLastName: String
+  $shippingCity: String
+  $shippingAddress: String
+  $shippingPhone: String
+) {
+  updateCustomer(
+    input: {
+      clientMutationId: "customer-update-mutation"
+      id: $id
+      billing: {
+        firstName: $billingFirstName
+        lastName: $billingLastName
+        city: $billingCity
+        address1: $billingAddress
+        phone: $billingPhone
+      }
+      shipping: {
+        firstName: $shippingFirstName
+        lastName: $shippingLastName
+        city: $shippingCity
+        address1: $shippingAddress
+        phone: $shippingPhone
+      }
+    }
+  ) {
+    customer {
+      billing {
+        address1
+        city
+        firstName
+        lastName
+        phone
+      }
+      shipping {
+        address1
+        city
+        firstName
+        lastName
+        phone
+      }
+    }
+  }
+}
+
+mutation refreshJwtAuthToken($refreshToken: String!) {
+  refreshJwtAuthToken(
+    input: {
+      clientMutationId: "refresh-token-mutation"
+      jwtRefreshToken: $refreshToken
+    }
+  ) {
+    authToken
+    clientMutationId
+  }
+}
+
+mutation forgotPassword($username: String!) {
+  sendPasswordResetEmailAlbiMall(
+    input: { username: $username, clientMutationId: "reset-password-mutation" }
+  ) {
+    clientMutationId
+  }
+}
+
+mutation resetPassword($email: String!, $key: String!, $password: String!) {
+  resetUserPassword(input: { key: $key, login: $email, password: $password }) {
+    clientMutationId
+  }
+}
+
+mutation subscribe($email: String!) {
+  mailchimpSubscription(input: { email: $email }) {
+    message
+  }
+}

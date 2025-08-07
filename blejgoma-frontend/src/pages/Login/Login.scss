@@ -1,0 +1,54 @@
+@import "../../styles/lib";
+.Login {
+  margin-bottom: 40px;
+  &__banner {
+    margin-bottom: 20px;
+  }
+  &__form_wrapper {
+    border-bottom: 1px solid #fff;
+    border-bottom-left-radius: unset;
+    border-bottom-right-radius: unset;
+  }
+  &__register_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
+  }
+  &__container {
+    max-width: 700px !important;
+    margin: 0 auto;
+    margin-bottom: auto;
+  }
+  &__socials {
+    font-size: 14px;
+    color: $dark-gray;
+    margin-bottom: 0;
+  }
+
+  &__register_btn {
+    max-width: 340px;
+    margin-bottom: 10px;
+  }
+
+  &__fb_icon {
+    width: 61px;
+    cursor: pointer;
+    svg {
+      &:hover {
+        path {
+          transition: $transition1;
+          fill: lighten(#000, 50);
+        }
+      }
+    }
+
+    path {
+      height: 100%;
+      width: 100%;
+      fill: #000;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+@import "../../../../styles/lib";
+.ResultSection {
+  margin-bottom: 50px;
+  &__header {
+    background-color: $light-gray;
+    padding: 17px 15px;
+    margin-bottom: 10px;
+  }
+  &__market {
+    margin-bottom: 4px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  &__model {
+    margin: 0;
+  }
+
+  &__hp {
+    font-size: 11px;
+    line-height: 11px;
+    margin-bottom: 5px;
+  }
+  &__engine {
+    line-height: 16px;
+    margin: 0;
+  }
+  &__content {
+    padding-top: 15px;
+  }
+  &__car_model {
+    font-weight: 600;
+  }
+  &__paragraph {
+    font-size: 14px;
+    margin-bottom: 10px;
+    span {
+      font-weight: 600;
+    }
+  }
+  &__info {
+    padding: 0 20px;
+  }
+
+  &__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  //Tab component style
+  &__tab {
+    background-color: #c9c9c9;
+    font-weight: 600;
+    padding: 10px 15px;
+    // margin-right: 10px;
+    min-width: 140px;
+    cursor: pointer;
+    transition: $transition1;
+    @include mobile {
+      min-width: calc(50% - 5px);
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      background-color: lighten($color: #c9c9c9, $amount: 5);
+    }
+  }
+  &__tab--active {
+    background-color: $dark-gray;
+    color: #fff;
+    &:hover {
+      background-color: lighten($color: $dark-gray, $amount: 10);
+    }
+  }
+}

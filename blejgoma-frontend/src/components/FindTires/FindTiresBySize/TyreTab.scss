@@ -1,0 +1,60 @@
+@import "../../../styles/lib";
+.TyreTab {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: $dark-gray;
+  color: $gray-text;
+  font-size: 15px;
+  cursor: pointer;
+
+  &:hover {
+    span {
+      color: $orange;
+    }
+  }
+
+  &--active {
+    background-color: $orange;
+    color: #fff;
+    font-weight: 600;
+    margin-left: -1px;
+
+    span {
+      border-right: 1px transparent !important;
+    }
+    &:hover {
+      span {
+        color: #fff !important;
+      }
+    }
+  }
+
+  span {
+    transition: color 0.3s cubic-bezier(0.3, 0, 0.2, 1);
+    white-space: nowrap;
+    padding: 0 17px;
+    line-height: 15px;
+    border-right: 1px solid $gray;
+
+    &::after {
+      content: attr(data-attr);
+      height: 0;
+      display: block;
+      font-weight: 600;
+      visibility: hidden;
+    }
+  }
+
+  &:last-child {
+    span {
+      border-right: unset;
+      padding-right: 26px;
+    }
+  }
+  &:first-child {
+    span {
+      padding-left: 26px;
+    }
+  }
+}

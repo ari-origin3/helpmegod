@@ -1,0 +1,25 @@
+@import "../../../styles/lib";
+.ProductPrice {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-end;
+  color: $dark-gray;
+  text-align: right;
+  gap: 5px;
+
+  &__sale {
+    font-weight: 700;
+    color: $orange;
+    line-height: 24px;
+  }
+
+  &__regular {
+    font-weight: 700;
+  }
+  &__regular--sale {
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: line-through;
+  }
+}

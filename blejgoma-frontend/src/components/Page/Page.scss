@@ -1,0 +1,13 @@
+@import "../../styles/lib";
+.Page {
+  padding-top: 70px;
+  min-height: calc(100vh - 78px - 299px);
+  @include mobile {
+    padding-top: 100px;
+    min-height: 100%;
+  }
+
+  &--no_padding {
+    padding-top: unset;
+  }
+}

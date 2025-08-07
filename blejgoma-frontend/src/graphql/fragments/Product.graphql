@@ -1,0 +1,65 @@
+fragment SimpleProduct on SimpleProduct {
+  name
+  databaseId
+  price(format: FORMATTED)
+  salePrice(format: FORMATTED)
+  stockQuantity
+  stockStatus
+  regularPrice(format: FORMATTED)
+  onSale
+  slug
+  productMetas {
+    model
+    lisi
+    euLabel {
+      fuel
+      noise
+      rain
+    }
+  }
+  productManufacturers {
+    nodes {
+      name
+      slug
+    }
+  }
+  paDiameters {
+    nodes {
+      name
+      slug
+    }
+  }
+  paHeights {
+    nodes {
+      name
+      slug
+    }
+  }
+  paSeasons {
+    nodes {
+      name
+      slug
+    }
+  }
+  paWidths {
+    nodes {
+      name
+      slug
+    }
+  }
+  productCategories {
+    nodes {
+      slug
+      name
+    }
+  }
+}
+
+fragment Product on Product {
+  name
+  id
+  sku
+  slug
+  databaseId
+  ...SimpleProduct
+}

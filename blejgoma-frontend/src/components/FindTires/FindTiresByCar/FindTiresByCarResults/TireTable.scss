@@ -1,0 +1,75 @@
+@import "../../../../styles/lib";
+.TireTable {
+  min-width: 620px;
+  @include mobile {
+    overflow-y: auto;
+    min-width: unset;
+  }
+  &__table {
+    border: 1px solid $border-gray;
+    thead {
+      th {
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: 600;
+        padding: 10px 5px;
+        text-align: center;
+        border-right: 1px solid $border-gray;
+        &:first-child {
+          border-right: unset;
+        }
+        &:last-child {
+          border-right: unset;
+        }
+      }
+    }
+    tbody {
+      tr {
+        border: unset;
+        &:nth-child(odd) {
+          background-color: #f9f9f9;
+        }
+      }
+      td {
+        border-right: 1px solid $border-gray;
+        text-align: center;
+        font-size: 14px;
+        padding: 4px 0;
+        @include mobile {
+          padding: 4px 10px;
+        }
+        &:first-child {
+          border-right: unset;
+          @include mobile {
+            min-width: 40px;
+          }
+        }
+        &:last-child {
+          border-right: unset;
+        }
+      }
+    }
+    .Table__divider {
+      display: none;
+    }
+  }
+
+  &__snow_icon {
+    width: 15px;
+    height: 15px;
+    svg {
+      fill: $dark-gray;
+    }
+  }
+  &__bold {
+    font-weight: 600;
+  }
+  &__lisi {
+    background-color: #242424cc;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 2px;
+    padding: 0 2px;
+    margin-left: 5px;
+  }
+}

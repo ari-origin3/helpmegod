@@ -1,0 +1,88 @@
+@import "../../../styles/lib";
+.CartProductsTable {
+  &__product {
+    display: flex;
+    max-height: 95px;
+    cursor: pointer;
+  }
+  .seasonLogo{
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    right: -5px;
+    bottom: 0px;
+  }
+
+  &__image {
+    width: 90px;
+    margin-right: 10px;
+    min-height: 95px;
+    position: relative;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__brand {
+    display: inline-block;
+    background-color: #353942;
+    padding: 2px 15px;
+    color: #f07e04;
+    font-size: 11px;
+    font-weight: 700;
+    max-width: 90px;
+  }
+
+  &__name {
+    font-size: 18px !important;
+    font-weight: 600;
+    line-height: 18px;
+  }
+
+  &__attributes {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &__price {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  &__total {
+    font-size: 20px;
+    font-weight: 700;
+    color: $orange;
+  }
+
+  &__remove {
+    width: 52px;
+    height: 115px;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: $transition1;
+    &:hover {
+      background: #e3e3e3;
+      path {
+        fill: #fff;
+      }
+    }
+  }
+  &__remove_icon {
+    display: flex;
+    align-items: center;
+    width: 35px;
+    path {
+      transition: $transition1;
+      fill: #e3e3e3;
+    }
+  }
+}

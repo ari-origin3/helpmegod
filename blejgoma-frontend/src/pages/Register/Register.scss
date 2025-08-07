@@ -1,0 +1,10 @@
+.Register {
+  .container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  &__form_wrapper {
+    width: 700px;
+  }
+}

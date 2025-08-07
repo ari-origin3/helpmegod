@@ -1,0 +1,19 @@
+@import "../../styles/lib";
+.FormWrapper {
+  background-color: #f4f4f4;
+  padding: 20px 61px;
+  border-radius: 5px;
+  border-bottom: 8px solid #dbdbdb;
+  max-width: 700px;
+  &__title {
+    font-weight: 700;
+    color: $dark-gray;
+    text-align: center;
+    padding-bottom: 13px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #fff;
+  }
+  @include mobile {
+    padding: 20px 25px;
+  }
+}

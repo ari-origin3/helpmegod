@@ -1,0 +1,63 @@
+@import "../../styles/lib";
+.CheckoutTabs {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin-bottom: 25px;
+  &__tab {
+    width: 100%;
+    text-align: center;
+    height: 40px;
+    padding: 9px 20px;
+    background-color: $dark-gray;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: lighten($dark-gray, 5);
+    }
+
+    &:nth-child(2) {
+      &::after {
+        left: 50%;
+        transform: translate(-50%, 0);
+        transform: rotate(45deg);
+      }
+    }
+    &:last-child {
+      &::after {
+        left: 25px;
+      }
+    }
+  }
+
+  &__tab--active {
+    position: relative;
+    background-color: $orange;
+
+    &::after {
+      position: absolute;
+      content: "";
+      background-color: $orange;
+      width: 20px;
+      height: 20px;
+      bottom: -10px;
+      right: 25px;
+      transform: rotate(45deg);
+    }
+
+    &:hover {
+      background-color: lighten($orange, 5);
+    }
+    &:hover::after {
+      background-color: lighten($orange, 5);
+    }
+  }
+
+  &__tab--disabled {
+    pointer-events: none;
+    background-color: lighten($dark-gray, 15);
+  }
+}

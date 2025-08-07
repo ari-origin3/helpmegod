@@ -1,0 +1,87 @@
+@import "../../../../styles/lib";
+.NavigationHeader {
+  position: absolute;
+  top: 40px;
+  z-index: 1;
+  width: 100%;
+  background-color: rgba(243, 243, 243, 0.5);
+
+  @include mobile {
+    background-color: white;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    @include mobile {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      height: 110px;
+      flex-flow: row wrap;
+    }
+  }
+
+  @include mobile {
+    &__search {
+      order: 2;
+      flex: 1 0 100%;
+    }
+  }
+
+  &__logo {
+    width: 240px;
+    height: 40px;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    @include mobile {
+      width: 200px;
+      height: 33.33px;
+    }
+  }
+
+  &__menu_icon {
+    margin-left: 40px;
+    cursor: pointer;
+    @include mobile {
+      margin: 0;
+    }
+    .Icon {
+      width: 47px;
+      height: unset;
+      svg {
+        fill: $dark-gray;
+        path:nth-child(2) {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+  &--menu_open {
+    position: absolute;
+    top: 00px;
+    padding-top: 40px;
+    height: 99px;
+    background-color: $dark-gray;
+    z-index: 4;
+
+    .NavigationHeader__menu_icon {
+      path {
+        fill: #fff;
+      }
+    }
+    .NavigationHeader__logo {
+      svg {
+        fill: #fff;
+      }
+    }
+    .NavigationHeader__search {
+      visibility: hidden;
+    }
+  }
+}

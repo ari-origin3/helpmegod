@@ -1,0 +1,74 @@
+@import "../../styles/lib";
+
+.CompaniesSlider {
+  background-color: $light-gray;
+  height: 110px;
+  padding: 10px 40px;
+  margin-bottom: 20px;
+  &__slide {
+    height: 90px;
+    cursor: pointer;
+    img {
+      transition: $transition3;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: grayscale(100%);
+
+      &:hover {
+        filter: unset;
+      }
+      &:focus {
+        outline: 0;
+      }
+    }
+    &:focus-visible {
+      outline: 0;
+    }
+  }
+
+  .slick-slider {
+    height: 100%;
+  }
+  .slick-list {
+    height: 100%;
+  }
+  &__arrow {
+    width: 27px; //TODO:Check why is this happening ?
+    height: 27px;
+    svg {
+      transition: $transition1;
+      fill: #4e4e4e;
+    }
+    svg:hover {
+      fill: lighten(#4e4e4e, 15);
+    }
+    &::before {
+      content: unset;
+    }
+  }
+
+  &__arrow--next {
+    right: -31px;
+    svg {
+      transform: rotateZ(180deg);
+    }
+  }
+
+  .slick-slide {
+    &:first-child {
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+  .slick-prev {
+    left: -31px;
+  }
+  // .slick-list {
+  //   margin: 0 -5px;
+  // }
+  .slick-slide > div {
+    padding: 0 8px;
+  }
+}

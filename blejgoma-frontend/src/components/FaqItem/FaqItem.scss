@@ -1,0 +1,59 @@
+@import "./../../styles/_lib.scss";
+
+.FaqItem {
+  border-bottom: 1px $dark-gray solid;
+  transition-duration: 4ms;
+  @include mobile {
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__title {
+    padding: 20px 0;
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    line-height: 18px;
+    background-image: url("../../assets/icons/arrow-right.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 10px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: all 100ms ease;
+  }
+
+  &__title:hover {
+    color: $orange;
+  }
+
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 400ms ease;
+    font-size: 14px;
+    line-height: 21px;
+    color: black;
+    width: 90%;
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  &--active {
+    .FaqItem {
+      &__title {
+        background-image: url("../../assets/icons/chevron-down.svg");
+        background-size: 18px;
+      }
+
+      &__content {
+        padding-bottom: 15px;
+        max-height: 999px;
+      }
+    }
+  }
+}

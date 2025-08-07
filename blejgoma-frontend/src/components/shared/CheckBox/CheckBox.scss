@@ -1,0 +1,80 @@
+@import "../../../styles/lib";
+.CheckBox {
+  display: block;
+  position: relative;
+  padding-left: 27px;
+  line-height: 17px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  /* Hide the browser's default checkbox */
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  /* Create a custom checkbox */
+  &__checkmark {
+    position: absolute;
+    top: 0;
+    left: 1px;
+    height: 17px;
+    width: 17px;
+    background-color: #fff;
+    border: 1px solid #c1c1c1;
+  }
+
+  /* On mouse-over, add a grey background color */
+  &:hover input ~ &__checkmark {
+    border-color: darken($color: #c1c1c1, $amount: 10);
+  }
+
+  /* Create the checkmark/indicator (hidden when not checked) */
+  &__checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the checkmark when checked */
+  input:checked ~ &__checkmark:after {
+    display: block;
+  }
+
+  /* Style the checkmark/indicator */
+  &__checkmark:after {
+    left: 4px;
+    top: 0;
+    width: 7px;
+    height: 12px;
+    border: solid $dark-gray;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  &--small {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    padding-left: 24px;
+    .CheckBox__checkmark {
+      height: 14px;
+      width: 14px;
+    }
+    .CheckBox__checkmark::after {
+      width: 5px;
+      height: 10px;
+      top: 0;
+      left: 4px;
+      border-width: 0 2px 2px 0;
+    }
+  }
+}

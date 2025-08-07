@@ -1,0 +1,54 @@
+@import "../../../styles/lib";
+.AddCoupon {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+
+  &__input {
+    border: 1px solid transparent;
+    padding-left: 10px;
+    &:focus:focus-within {
+      border: 1px solid $dark-gray;
+      outline: 0;
+    }
+
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      font-size: 12px;
+      color: #c2c2c2;
+      text-align: center;
+    }
+
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      font-size: 12px;
+      color: #c2c2c2;
+    }
+
+    &::-ms-input-placeholder {
+      /* Microsoft Edge */
+      font-size: 12px;
+      color: #c2c2c2;
+    }
+  }
+
+  &__button {
+    background-color: $dark-gray;
+    &:hover {
+      background-color: lighten($color: $dark-gray, $amount: 10);
+    }
+  }
+
+  &--error {
+    margin-bottom: 10px;
+    box-shadow: $error-box-shadow;
+  }
+  &__error {
+    position: absolute;
+    top: 45px;
+    left: 5px;
+    color: red;
+    font-size: 12px;
+  }
+}

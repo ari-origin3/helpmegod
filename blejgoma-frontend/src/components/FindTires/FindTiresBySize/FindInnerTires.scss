@@ -1,0 +1,17 @@
+@import "../../../styles/lib";
+.FindInnerTires {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 20px;
+  @include mobile {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &__button {
+    place-self: end;
+    @include mobile {
+      grid-column: 1/4;
+      max-width: 200px;
+      margin: 20px auto;
+    }
+  }
+}

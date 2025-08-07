@@ -1,0 +1,19 @@
+.ToastContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__text {
+    margin: 0;
+  }
+  &__icon {
+    .Icon {
+      width: 6px;
+      height: fit-content;
+      margin-left: 6px;
+    }
+  }
+  a {
+    display: flex;
+    align-items: center;
+  }
+}

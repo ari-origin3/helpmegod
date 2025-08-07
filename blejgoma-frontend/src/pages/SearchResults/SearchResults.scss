@@ -1,0 +1,25 @@
+@import "../../styles/lib";
+.SearchResults {
+  &__heading {
+    font-weight: 600;
+    margin: 20px 0;
+    span {
+      color: $orange;
+    }
+  }
+  &__products_list {
+    width: 100%;
+
+    & > * {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__spinner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

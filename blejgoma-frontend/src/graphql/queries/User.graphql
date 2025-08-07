@@ -1,0 +1,41 @@
+query getViewer {
+  viewer {
+    id
+    databaseId
+    email
+    firstName
+    lastName
+    phoneNumber
+    wishListProducts {
+      wishlistProducts
+    }
+    jwtAuthToken
+    jwtRefreshToken
+  }
+}
+query getUserAddresses($id: ID) {
+  customer(id: $id) {
+    billing {
+      address1
+      city
+      firstName
+      lastName
+      phone
+    }
+    shipping {
+      address1
+      city
+      firstName
+      lastName
+      phone
+    }
+  }
+}
+
+query getCities {
+  themeOptions {
+    themeOptions {
+      cities
+    }
+  }
+}

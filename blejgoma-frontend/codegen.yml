@@ -1,0 +1,22 @@
+overwrite: true
+watch: true
+schema: https://management.blejgoma.com/graphql/
+documents: "src/**/*.graphql"
+generates:
+  src/graphql/generated/fragment-matcher.ts:
+    plugins:
+      - fragment-matcher
+    config:
+      useExplicitTyping: true
+      apolloClientVersion:
+  src/graphql/generated/generated.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+      - "fragment-matcher"
+    config:
+      withHooks: true
+      withHOC: false
+      withComponent: false
+      withMutationFn: false

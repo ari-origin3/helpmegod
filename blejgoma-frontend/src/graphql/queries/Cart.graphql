@@ -1,0 +1,28 @@
+query getCart {
+  cart {
+    isEmpty
+    subtotal
+    total
+    discountTotal
+    shippingTotal
+    chosenShippingMethod
+    appliedCoupons {
+      nodes {
+        id
+        code
+        amount
+        discountType
+      }
+    }
+    contents(first: 100) {
+      itemCount
+      nodes {
+        key
+        quantity
+        product {
+          ...SimpleProduct
+        }
+      }
+    }
+  }
+}

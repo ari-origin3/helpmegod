@@ -1,0 +1,44 @@
+@import "../../styles/lib";
+
+.EUTyreLabel {
+  width: 161px;
+  min-width: 161px;
+  height: 236px;
+  position: relative;
+  &__fuel {
+    position: absolute;
+    top: 0;
+    left: 57px;
+  }
+  &__rain {
+    position: absolute;
+    top: 0;
+    right: 11px;
+  }
+  &__noise {
+    position: absolute;
+    bottom: 28px;
+    left: 95px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    width: 50px;
+    text-align: right;
+  }
+  &__arrow {
+    height: 20px;
+  }
+  &__arrow--fuel {
+    position: absolute;
+  }
+  &__value {
+    display: inline-block;
+    position: absolute;
+    font-size: 17px;
+    font-weight: 600;
+    top: 3px;
+    left: 50%;
+    transform: translate(calc(-50% + 5px), 0);
+    color: #fff;
+  }
+}

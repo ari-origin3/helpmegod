@@ -1,0 +1,23 @@
+@import "../../../styles/lib";
+.Input {
+  //   color: red;
+  label {
+    margin-bottom: 7px !important;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .form-control {
+    height: 40px;
+    background-color: #fff;
+    border-radius: unset;
+    border: unset;
+  }
+  .form-control:focus {
+    border: unset;
+    box-shadow: 0 0 0 0.2rem rgba(240, 126, 4, 0.2);
+  }
+  .form-control.is-invalid {
+    box-shadow: $error-box-shadow;
+    border: 0 !important;
+  }
+}

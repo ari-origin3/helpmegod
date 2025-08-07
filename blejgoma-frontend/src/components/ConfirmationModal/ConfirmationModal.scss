@@ -1,0 +1,43 @@
+@import "../../styles/lib";
+
+.ConfirmationModal {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 15px 35px 15px 35px;
+    @include mobile {
+      padding: 15px;
+    }
+    .Icon {
+      width: 50px !important;
+      svg {
+        fill: $orange;
+      }
+    }
+
+    .Button {
+      width: 60%;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    line-height: 28px;
+    font-weight: 600;
+  }
+  &__title {
+    font-weight: 700;
+    margin-top: 15px;
+  }
+}
+.modal-content {
+  max-width: 450px !important;
+  height: 380px;
+}
+
+.Modal {
+  top: 40% !important;
+}

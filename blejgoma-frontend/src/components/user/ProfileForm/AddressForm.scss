@@ -1,0 +1,19 @@
+.AddressForm {
+  &__wrapper {
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .form-group {
+    margin-bottom: 17px;
+  }
+  &__submit_btn {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+  &__city_select {
+    margin-bottom: 17px;
+    .Select__control {
+      border: unset !important;
+    }
+  }
+}

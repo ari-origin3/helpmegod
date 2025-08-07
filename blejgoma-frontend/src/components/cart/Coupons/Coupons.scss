@@ -1,0 +1,55 @@
+@import "../../../styles/lib";
+.Coupons {
+  width: 100%;
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    p {
+      padding: 5px 10px;
+      margin: 0;
+      font-size: 14px;
+      text-transform: uppercase;
+      span {
+        text-transform: lowercase;
+      }
+    }
+  }
+  &__remove_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 31px;
+    height: 31px;
+    background-color: #e3e3e3;
+    font-size: 12px;
+
+    .Icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        height: 20px;
+        width: 20px;
+      }
+      path {
+        transition: $transition1;
+        fill: $dark-gray;
+      }
+
+      &:hover {
+        path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+}

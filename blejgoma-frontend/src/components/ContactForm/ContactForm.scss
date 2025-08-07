@@ -1,0 +1,30 @@
+@import "../../styles/lib";
+.ContactForm {
+  &__input {
+    input {
+      border: 1px solid #e8e8e8 !important;
+    }
+    textarea {
+      border: 1px solid #e8e8e8 !important;
+      min-height: 150px;
+    }
+  }
+  & > * {
+    margin-bottom: 15px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__button {
+    max-width: 220px;
+    margin-right: auto;
+    margin-top: 20px;
+    @include mobile {
+      max-width: unset;
+    }
+  }
+  &__message {
+    font-size: 15px;
+    color: $green;
+  }
+}

@@ -1,0 +1,133 @@
+mutation addProduct(
+  $clientMutationId: String!
+  $productId: Int!
+  $quantity: Int
+) {
+  addToCart(
+    input: {
+      clientMutationId: $clientMutationId
+      productId: $productId
+      quantity: $quantity
+    }
+  ) {
+    cart {
+      isEmpty
+      subtotal
+      total
+      discountTotal
+      shippingTotal
+      chosenShippingMethod
+      appliedCoupons {
+        nodes {
+          id
+          code
+          amount
+          discountType
+        }
+      }
+      contents(first: 100) {
+        itemCount
+        nodes {
+          key
+          quantity
+          product {
+            ...SimpleProduct
+          }
+        }
+      }
+    }
+  }
+}
+
+mutation updateItemQuantity($input: UpdateItemQuantitiesInput!) {
+  updateItemQuantities(input: $input) {
+    cart {
+      isEmpty
+      subtotal
+      total
+      discountTotal
+      shippingTotal
+      chosenShippingMethod
+      appliedCoupons {
+        nodes {
+          id
+          code
+          amount
+          discountType
+        }
+      }
+      contents(first: 100) {
+        itemCount
+        nodes {
+          key
+          quantity
+          product {
+            ...SimpleProduct
+          }
+        }
+      }
+    }
+  }
+}
+
+mutation applyCoupon($coupon: String!) {
+  applyCoupon(input: { code: $coupon }) {
+    cart {
+      isEmpty
+      subtotal
+      total
+      discountTotal
+      shippingTotal
+      chosenShippingMethod
+      appliedCoupons {
+        nodes {
+          id
+          code
+          amount
+          discountType
+        }
+      }
+      contents(first: 100) {
+        itemCount
+        nodes {
+          key
+          quantity
+          product {
+            ...SimpleProduct
+          }
+        }
+      }
+    }
+  }
+}
+
+mutation removeCoupon($coupon: String!) {
+  removeCoupons(input: { codes: [$coupon] }) {
+    cart {
+      isEmpty
+      subtotal
+      total
+      discountTotal
+      shippingTotal
+      chosenShippingMethod
+      appliedCoupons {
+        nodes {
+          id
+          code
+          amount
+          discountType
+        }
+      }
+      contents(first: 100) {
+        itemCount
+        nodes {
+          key
+          quantity
+          product {
+            ...SimpleProduct
+          }
+        }
+      }
+    }
+  }
+}

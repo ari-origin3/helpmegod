@@ -1,0 +1,18 @@
+@import "../../../../styles/lib";
+.FindTiresByCarResults {
+  &__content {
+    padding: 20px 160px;
+    @include mobile {
+      padding: 0;
+      margin-top: 20px;
+    }
+  }
+  &__heading {
+    font-weight: 600;
+    margin: 0;
+  }
+  &__sub_heading {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}

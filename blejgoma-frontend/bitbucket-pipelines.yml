@@ -1,0 +1,31 @@
+#bitbucket-pipelines.yml
+image: node:10.15.3
+
+pipelines:
+  branches:
+    master:
+      - step:
+          name: Build React Project
+          script:
+            - echo $env > .env
+            - npm install
+            - npm run-script build
+            - mv build/index.html build/index.php
+            - cp og.php build/
+            - sed -i 's+<title>Blej Goma</title>+<?php include "og.php" ?>+g' build/index.php          
+            - mkdir packaged
+            - tar -czvf packaged/package-${BITBUCKET_BUILD_NUMBER}.tar.gz -C build .
+          artifacts:
+            - packaged/**
+      - step:
+          name: Deploy to Web
+          image: alpine
+          deployment: production
+          script:
+            - mkdir upload
+            - tar -xf packaged/package-${BITBUCKET_BUILD_NUMBER}.tar.gz -C upload
+            - apk update && apk add openssh rsync
+            - rsync -a  -e "ssh -o StrictHostKeyChecking=no" --delete upload/ vo5lfpdxhvma@blejgoma.com:/home/vo5lfpdxhvma/temp/react-${BITBUCKET_BUILD_NUMBER}
+            - ssh -o StrictHostKeyChecking=no vo5lfpdxhvma@blejgoma.com "rm -r /home/vo5lfpdxhvma/public_html"
+            - ssh -o StrictHostKeyChecking=no vo5lfpdxhvma@blejgoma.com "mv '/home/vo5lfpdxhvma/temp/react-${BITBUCKET_BUILD_NUMBER}' '/home/vo5lfpdxhvma/public_html'"
+            - ssh -o StrictHostKeyChecking=no vo5lfpdxhvma@blejgoma.com "chmod -R u+rwX,go+rX,go-w /home/vo5lfpdxhvma/public_html"

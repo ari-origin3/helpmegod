@@ -1,0 +1,81 @@
+query getOrderById($id: ID) {
+  order(id: $id, idType: DATABASE_ID) {
+    id
+    databaseId
+    status
+    subtotal
+    total
+    shippingTotal
+    date
+    dateCompleted
+    orderNumber
+    currency
+    paymentMethod
+    paymentMethodTitle
+    billing {
+      address1
+      firstName
+      lastName
+      country
+      phone
+      email
+      city
+    }
+    shipping {
+      address1
+      city
+      email
+      firstName
+      lastName
+      phone
+      city
+    }
+    shippingLines {
+      nodes {
+        methodTitle
+        shippingMethod {
+          databaseId
+        }
+      }
+    }
+    lineItems {
+      nodes {
+        orderId
+        quantity
+        total
+        variation {
+          id
+          sku
+          onSale
+          salePrice
+          regularPrice
+          stockQuantity
+          attributes {
+            nodes {
+              id
+              name
+              value
+            }
+          }
+          image {
+            id
+            mediaItemUrl
+          }
+        }
+        product {
+          ...SimpleProduct
+        }
+      }
+    }
+    couponLines {
+      nodes {
+        code
+        discount
+        discountTax
+        coupon {
+          amount
+        }
+      }
+    }
+  }
+}

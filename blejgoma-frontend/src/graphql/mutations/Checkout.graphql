@@ -1,0 +1,13 @@
+mutation checkout($inputData: CheckoutInput!) {
+  checkout(input: $inputData) {
+    redirect
+    order {
+      id
+      databaseId
+      order
+    }
+    customer {
+      ...Customer
+    }
+  }
+}

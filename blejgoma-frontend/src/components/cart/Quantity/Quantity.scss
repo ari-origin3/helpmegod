@@ -1,0 +1,25 @@
+.Quantity {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  width: 60px;
+  border: 1px solid #dddddd;
+  padding: 0 5px;
+
+  &__button {
+    text-align: center;
+    color: #dddddd;
+    cursor: pointer;
+    margin-top: 1px;
+    user-select: none;
+  }
+  &__button--disabled {
+    cursor: not-allowed;
+  }
+  &__value {
+    font-size: 12px;
+    font-weight: 500;
+  }
+}

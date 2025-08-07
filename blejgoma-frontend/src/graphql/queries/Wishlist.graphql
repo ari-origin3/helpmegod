@@ -1,0 +1,7 @@
+query getUserWishlist($products: [Int]) {
+  products(first: 100, where: { include: $products }) {
+    nodes {
+      ...SimpleProduct
+    }
+  }
+}

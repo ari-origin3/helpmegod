@@ -1,0 +1,64 @@
+@import "../../../styles/lib";
+
+.AddToCart {
+  display: flex;
+  margin-right: 10px;
+
+  &__quantity_select {
+    .Select__control {
+      padding: 0 !important;
+    }
+    // width: 60px;
+    .Select__indicator {
+      position: absolute;
+      top: -2px;
+      right: -6px;
+    }
+  }
+  &__button {
+    width: 150px;
+    .Icon {
+      path {
+        fill: white;
+      }
+    }
+  }
+  &--error {
+    box-shadow: $error-box-shadow;
+  }
+
+  &--small {
+    margin: 0;
+    .AddToCart__quantity_select {
+      height: 30px;
+      // max-width: 37px;
+      .Select__control {
+        height: 30px;
+        min-height: unset;
+        padding: unset;
+      }
+      .Select__menu {
+        width: 60px;
+      }
+      .Select__indicator {
+        position: absolute;
+        top: -1px;
+        right: -5px;
+        width: 30px;
+      }
+      .Select__value-container {
+        padding: 0 15px 0 10px;
+      }
+      .Select__single-value {
+        margin: 0;
+      }
+      .Select__placeholder {
+        margin: 0;
+      }
+    }
+    .AddToCart__button {
+      width: 100%;
+      min-width: 80px;
+    }
+  }
+}

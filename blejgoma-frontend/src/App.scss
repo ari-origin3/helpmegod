@@ -1,0 +1,23 @@
+@import "./styles/lib";
+.App {
+  min-height: 100vh;
+  height: 100vh;
+  &__loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background: white;
+    svg {
+      width: 280px;
+      @include mobile {
+        width: 250px;
+      }
+    }
+  }
+}

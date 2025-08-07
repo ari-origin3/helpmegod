@@ -1,0 +1,43 @@
+query getOrders {
+  customer {
+    orders(first: 1000) {
+      nodes {
+        id
+        date
+        status
+        currency
+        databaseId
+        orderNumber
+        shippingTotal(format: FORMATTED)
+        discountTotal(format: FORMATTED)
+        total(format: FORMATTED)
+        lineItems {
+          nodes {
+            product {
+              ... on SimpleProduct {
+                id
+                price(format: RAW)
+                salePrice(format: RAW)
+                regularPrice(format: RAW)
+              }
+              image {
+                id
+                sourceUrl
+                mediaItemUrl
+                srcSet
+              }
+              productMetas {
+                model
+              }
+              galleryImages {
+                nodes {
+                  link
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

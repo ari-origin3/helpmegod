@@ -1,0 +1,17 @@
+fragment User on User {
+  wishListProducts {
+    wishlistProducts
+  }
+}
+
+fragment Customer on Customer {
+  id
+  firstName
+  email
+  lastName
+  billing {
+    phone
+  }
+  jwtRefreshToken
+  jwtAuthToken
+}

@@ -1,0 +1,11 @@
+@import "../../styles/lib";
+
+.Orders {
+  &__heading {
+    color: $dark-gray;
+    font-weight: 600;
+    padding-bottom: 23px;
+    margin-bottom: 23px;
+    border-bottom: 1px solid #e3e3e3;
+  }
+}

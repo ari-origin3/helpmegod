@@ -1,0 +1,42 @@
+@import "../../../styles/lib";
+.InfoPlaceholder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__icon {
+    width: 100px;
+    height: 100px;
+    margin: 20px 0;
+  }
+  &--warning {
+    .InfoPlaceholder__icon {
+      svg {
+        fill: $orange;
+      }
+    }
+    .InfoPlaceholder__text {
+      color: $orange;
+    }
+  }
+  &--error {
+    .InfoPlaceholder__icon {
+      svg {
+        fill: $error;
+      }
+    }
+    .InfoPlaceholder__text {
+      color: $error;
+    }
+  }
+  &--success {
+    .InfoPlaceholder__icon {
+      svg {
+        fill: $green;
+      }
+    }
+    .InfoPlaceholder__text {
+      color: $green;
+    }
+  }
+}

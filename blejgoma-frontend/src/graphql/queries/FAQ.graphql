@@ -1,0 +1,12 @@
+query getFAQ {
+  generalOptions {
+    generalOptions {
+      faq {
+        list {
+          title
+          description
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import "../../../styles/lib";
+.Image {
+  &--default {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.2 !important;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+    img {
+      max-width: 70px;
+      max-height: 75px;
+    }
+    @include mobile {
+      padding: 10px 100px !important;
+    }
+  }
+  &--contain {
+    object-fit: contain !important;
+  }
+  &--loading {
+    filter: blur(10px);
+  }
+}

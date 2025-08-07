@@ -1,0 +1,22 @@
+@import "../../styles/lib";
+.Cart {
+  &__wrapper {
+    display: flex;
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+  &__left {
+    width: 100%;
+    margin-right: 20px;
+
+    @include mobile {
+      margin-bottom: 30px;
+    }
+  }
+  &__heading {
+    font-weight: 600;
+    color: $dark-gray;
+    margin-bottom: 23px;
+  }
+}

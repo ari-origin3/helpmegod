@@ -1,0 +1,63 @@
+@import "../../../styles/lib";
+
+.ProfileOrderSingle {
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  &__heading {
+    margin-bottom: 23px;
+  }
+  &__product {
+    display: flex;
+    max-height: 95px;
+    cursor: pointer;
+  }
+  &__image {
+    width: 90px;
+    margin-right: 10px;
+    min-height: 95px;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__brand {
+    text-align: center;
+    display: inline-block;
+    background-color: #353942;
+    padding: 2px 15px;
+    color: #f07e04;
+    font-size: 11px;
+    font-weight: 700;
+    max-width: 90px;
+  }
+
+  &__name {
+    font-size: 18px !important;
+    font-weight: 600;
+    line-height: 18px;
+  }
+
+  &__attributes {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &__price {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  &__total {
+    font-size: 20px;
+    font-weight: 700;
+    color: $orange;
+  }
+}

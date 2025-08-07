@@ -1,0 +1,156 @@
+query getTiresByMeasurementsAndSeason {
+  paDiameters(first: 1000, where: { hideEmpty: true }) {
+    nodes {
+      id
+      name
+      slug
+    }
+  }
+  paHeights(first: 1000, where: { hideEmpty: true }) {
+    nodes {
+      id
+      name
+      slug
+    }
+  }
+  paWidths(first: 1000, where: { hideEmpty: true }) {
+    nodes {
+      id
+      name
+      slug
+    }
+  }
+  paSeasons {
+    nodes {
+      id
+      name
+      slug
+    }
+  }
+}
+
+query getTiresByMeasurements {
+  paDiameters(first: 1000, where: { hideEmpty: true }) {
+    nodes {
+      id
+      name
+      slug
+    }
+  }
+  paHeights(first: 1000, where: { hideEmpty: true }) {
+    nodes {
+      id
+      name
+      slug
+    }
+  }
+  paWidths(first: 1000, where: { hideEmpty: true }) {
+    nodes {
+      id
+      name
+      slug
+    }
+  }
+}
+
+query getAdSliderContent {
+  generalOptions {
+    generalOptions {
+      ads {
+        adSlider {
+          link
+          image {
+            mediaItemUrl
+          }
+        }
+      }
+    }
+  }
+}
+
+query getInfoBannerContent {
+  generalOptions {
+    generalOptions {
+      ads {
+        infoBanner {
+          delivery {
+            content
+            title
+          }
+          purchase {
+            content
+            title
+          }
+          tires {
+            content
+            title
+          }
+        }
+      }
+    }
+  }
+}
+
+query getManufacterers {
+  productManufacturers(first: 1000) {
+    nodes {
+      name
+      slug
+      manufacturerOptions {
+        manufacturerPhoto {
+          mediaItemUrl
+        }
+      }
+    }
+  }
+}
+
+query getBannerAd {
+  generalOptions {
+    generalOptions {
+      ads {
+        adBanner {
+          image {
+            mediaItemUrl
+          }
+          link
+        }
+      }
+    }
+  }
+}
+
+query getPopUpContent {
+  generalOptions {
+    generalOptions {
+      ads {
+        popupText
+      }
+    }
+  }
+}
+
+query getCategoryCampaignGrid {
+  productCategories(
+    where: {
+      slug: ["autogoma", "komerciale", "moto", "industriale", "bujqesore"]
+    }
+  ) {
+    nodes {
+      image {
+        mediaItemUrl
+      }
+      name
+      slug
+    }
+  }
+}
+
+query getAllProductCategories {
+  productCategories {
+    nodes {
+      name
+      slug
+    }
+  }
+}

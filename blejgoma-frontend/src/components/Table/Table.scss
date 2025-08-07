@@ -1,0 +1,73 @@
+@import "../../styles/lib";
+.Table {
+  width: 100%;
+
+  @include mobile {
+    display: block;
+    overflow-x: scroll;
+  }
+
+  thead {
+    th {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 12px;
+
+      &:first-child {
+        @include mobile {
+          padding-left: 30px;
+          text-align: left;
+        }
+      }
+
+      @include mobile {
+        text-align: center;
+      }
+    }
+  }
+  tbody {
+    p {
+      margin: 0;
+    }
+
+    tr {
+      border: 2px solid $border-gray;
+      margin-bottom: 20px;
+    }
+    td {
+      vertical-align: middle;
+      padding: 10px 0;
+
+      @include mobile {
+        padding: 0 30px;
+      }
+
+      &:first-child {
+        padding-left: 10px;
+        @include mobile {
+          min-width: 350px;
+        }
+      }
+
+      &:last-child {
+        padding: 0;
+      }
+    }
+  }
+  &__divider {
+    height: 10px;
+    border: none !important;
+  }
+  &__placeholder {
+    border: unset !important;
+    td {
+      text-align: center;
+    }
+  }
+  &__empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}

@@ -1,0 +1,26 @@
+.BillingFields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & > * {
+    margin-bottom: 30px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  &__shipping_address {
+    width: 100%;
+    p {
+      font-size: 14px;
+      font-weight: 600;
+      margin-left: 15px;
+    }
+  }
+  &_wrapper {
+    display: flex;
+    justify-content: center;
+    .CheckBox {
+      margin-right: 20px;
+    }
+  }
+}

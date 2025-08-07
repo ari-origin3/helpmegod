@@ -1,0 +1,98 @@
+{
+  "name": "blej_goma",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@apollo/client": "^3.3.12",
+    "@rehooks/local-storage": "^2.4.0",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/jest": "^26.0.21",
+    "@types/node": "^12.20.6",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.2",
+    "@types/react-router": "^5.1.12",
+    "@types/react-router-dom": "^5.1.6",
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-link-error": "^1.1.13",
+    "axios": "^0.20.0",
+    "bootstrap": "^4.6.0",
+    "classnames": "^2.2.6",
+    "eu-tyre-label-gen": "^1.0.2",
+    "formik": "^2.2.1",
+    "generate-react-cli": "^5.1.0",
+    "graphql": "^15.5.0",
+    "jwt-decode": "^3.1.2",
+    "query-string": "^6.14.1",
+    "react": "^17.0.1",
+    "react-content-loader": "^6.0.3",
+    "react-dom": "^17.0.1",
+    "react-infinite-scroll-hook": "^4.0.1",
+    "react-loading-skeleton": "^2.2.0",
+    "react-route-guard": "^1.0.7",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-select": "^4.3.0",
+    "react-slick": "^0.28.1",
+    "react-toast-notifications": "^2.4.4",
+    "reactstrap": "^8.9.0",
+    "sass": "^1.55.0",
+    "slick-carousel": "^1.8.1",
+    "typescript": "^4.2.3",
+    "use-debounce": "^5.2.1",
+    "web-vitals": "^1.1.1",
+    "yup": "^0.29.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
+    "start:reset-cache": "npm start --reset-cache",
+    "generate:icons": "node scripts/generate-icons.js",
+    "generate:images": "node scripts/generate-images.js",
+    "generate:component": "npx generate-react-cli component",
+    "generate:page": "npx generate-react-cli component --type=page",
+    "generate:graphql": "graphql-codegen --config codegen.yml",
+    "generate:fragment-schema": "node src/apollo/schemaQuery.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "1.21.3",
+    "@graphql-codegen/fragment-matcher": "2.0.1",
+    "@graphql-codegen/typescript": "1.21.1",
+    "@graphql-codegen/typescript-document-nodes": "1.17.10",
+    "@graphql-codegen/typescript-graphql-files-modules": "1.18.1",
+    "@graphql-codegen/typescript-operations": "1.17.15",
+    "@graphql-codegen/typescript-react-apollo": "^2.2.3",
+    "@graphql-codegen/urql-introspection": "1.0.0",
+    "@types/classnames": "^2.2.11",
+    "@types/lodash": "^4.14.170",
+    "@types/node-sass": "^4.11.1",
+    "@types/react-select": "^4.0.15",
+    "@types/react-slick": "^0.23.4",
+    "@types/reactstrap": "^8.5.1",
+    "@types/yup": "^0.29.9",
+    "prettier": "^2.2.1"
+  }
+}

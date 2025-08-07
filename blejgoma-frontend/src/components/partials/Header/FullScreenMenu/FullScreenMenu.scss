@@ -1,0 +1,105 @@
+@import "../../../../styles/lib";
+.FullScreenMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 3;
+  background-color: $dark-gray;
+  opacity: 0.98;
+  transition: $transition1;
+  padding-top: 100px;
+  color: #fff;
+  @include mobile {
+    overflow: auto;
+  }
+  &--closed {
+    display: none;
+  }
+
+  &__categories {
+    border-top: 2px solid #292c33;
+    border-bottom: 1px solid #292c33;
+    padding: 10px 20px;
+
+    @include mobile {
+      span {
+        margin-right: 0 !important;
+        margin: 10px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // padding: 10px 0px;
+      }
+    }
+    ul {
+      display: flex;
+      flex-wrap: nowrap;
+      text-align: left;
+      justify-content: flex-start;
+      margin: 0;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 30px;
+      @include mobile {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+
+        li {
+          padding: 10px;
+          // text-align: center;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      a:hover {
+        transition: $transition1;
+        color: $orange;
+        cursor: pointer;
+        min-width: 150px;
+      }
+
+      li {
+        min-width: 150px;
+      }
+      li:hover {
+        transition: $transition1;
+        color: $orange;
+        cursor: pointer;
+        min-width: 150px;
+      }
+    }
+  }
+  &__sub_categories {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 18px;
+    padding-bottom: 140px;
+    border-bottom: 2px solid #292c33;
+    li {
+      text-align: left;
+      min-width: 150px;
+      font-size: 13px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      transition: $transition1;
+      &:hover {
+        color: $orange;
+        font-weight: 600;
+      }
+    }
+  }
+  &__footer {
+    margin: 0;
+    .Footer__logo {
+      visibility: hidden;
+    }
+  }
+}

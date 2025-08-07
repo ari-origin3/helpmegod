@@ -1,0 +1,10 @@
+@import "../../../styles/lib";
+.ProductStatus {
+  font-size: 14px;
+  font-weight: 500;
+  color: $green !important;
+
+  &--out {
+    color: $error !important;
+  }
+}

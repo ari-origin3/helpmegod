@@ -1,0 +1,109 @@
+@import "../../styles/lib";
+.Wishlist {
+  &__heading {
+    font-weight: 600;
+    margin: 0;
+    padding-bottom: 23px;
+  }
+
+  &__items_wrapper {
+    max-width: 905px;
+  }
+
+  //item classes
+  &__item {
+    position: relative;
+    display: flex;
+    height: 120px;
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid $border-gray;
+    padding-right: 52px;
+  }
+
+  &__image {
+    position: relative;
+    width: 100px;
+    height: 100%;
+    margin-right: 20px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; //TODO:Switch cover to contain
+    }
+  }
+
+  &__details {
+    flex: auto;
+    // display: flex;
+  }
+
+  &__brand {
+    display: inline-block;
+    background-color: $dark-gray;
+    padding: 2px 15px;
+    margin: 0;
+    color: $orange;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  &__info_wrapper {
+    display: flex;
+  }
+
+  &__left {
+    p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 24px;
+      color: $dark-gray;
+    }
+    margin-right: 100px;
+  }
+  &__stars {
+    // margin-bottom: 10px;
+    margin-top: -3px; //TODO:Remove after fixing issue with svg icon generator.
+  }
+  &__name {
+    font-size: 18px !important;
+    font-weight: 600;
+  }
+  &__attributes {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  &__price {
+    font-weight: 700;
+    color: $dark-gray;
+    line-height: 24px;
+  }
+
+  &__remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 52px;
+    height: 100%;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+      border: 0;
+      background: #f4f4f4;
+    }
+  }
+  &__remove_icon {
+    display: flex;
+    align-items: center;
+    width: 35px;
+    path {
+      fill: #e3e3e3;
+      &:hover {
+        fill: darken($color: #e3e3e3, $amount: 20);
+      }
+    }
+  }
+}

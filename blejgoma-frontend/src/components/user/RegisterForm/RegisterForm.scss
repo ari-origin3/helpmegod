@@ -1,0 +1,20 @@
+.RegisterForm {
+  &__submit_btn {
+    max-width: 220px;
+    margin: 0 auto;
+    margin-top: 34px;
+  }
+
+  .Select__control {
+    border: none;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  &__city_select {
+    margin-bottom: 17px;
+    .Select__control {
+      border: unset !important;
+    }
+  }
+}

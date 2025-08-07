@@ -1,0 +1,45 @@
+@import "../../styles/lib";
+.BreadCrumbs {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #878787;
+  text-transform: uppercase;
+  letter-spacing: 2.88px;
+
+  @include mobile {
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+  &__item {
+    cursor: pointer;
+    transition: $transition1;
+
+    &::after {
+      content: "/";
+      margin: 0 10px;
+      pointer-events: none;
+    }
+
+    &:hover {
+      color: lighten($color: #878787, $amount: 10);
+    }
+
+    &:last-child {
+      //   pointer-events: none;
+      &:after {
+        display: none;
+      }
+    }
+  }
+  &--disable-last {
+    .BreadCrumbs__item {
+      &:last-child {
+        pointer-events: none;
+      }
+    }
+  }
+}

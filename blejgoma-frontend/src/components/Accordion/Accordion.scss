@@ -1,0 +1,30 @@
+@import "../../styles/lib";
+.Accordion {
+  border-bottom: 1px solid #dddddd;
+
+  &__title {
+    position: relative;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    cursor: pointer;
+    user-select: none;
+    text-transform: uppercase;
+  }
+
+  &__arrow {
+    position: absolute;
+    width: 16px;
+    height: unset;
+    top: 0;
+    right: 2px;
+    cursor: pointer;
+  }
+  &__content {
+    padding: 0 15px 19px 15px;
+  }
+
+  &__content--closed {
+    display: none;
+  }
+}

@@ -1,0 +1,67 @@
+query getProduct($slug: String) {
+  products(where: { slug: $slug }) {
+    nodes {
+      ...Product
+    }
+  }
+}
+
+query getRelatedProducts(
+  $exclude: [Int]
+  $after: String
+  $limit: Int
+  $category: String
+) {
+  products(
+    first: $limit
+    after: $after
+    where: { exclude: $exclude, category: $category }
+  ) {
+    nodes {
+      id
+      slug
+      databaseId
+      name
+      ...SimpleProduct
+    }
+  }
+}
+
+query getBrandAndCategoryBySlug($brand: String, $category: String) {
+  productCategories(where: { slug: [$category] }) {
+    nodes {
+      slug
+      name
+    }
+  }
+  productManufacturers(where: { slug: [$brand] }) {
+    nodes {
+      name
+      slug
+    }
+  }
+}
+
+query getSearchResulsts($term: String, $limit: Int, $after: String) {
+  products(first: $limit, after: $after, where: { search: $term }) {
+    nodes {
+      ...Product
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}
+
+query getRecommendedProducts($after: String, $limit: Int) {
+  products(first: $limit, after: $after) {
+    nodes {
+      id
+      slug
+      databaseId
+      name
+      ...SimpleProduct
+    }
+  }
+}

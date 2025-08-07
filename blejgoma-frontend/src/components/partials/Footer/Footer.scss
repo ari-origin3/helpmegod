@@ -1,0 +1,348 @@
+@import "../../../styles/lib";
+
+//color variables only used in footer
+$border-color: #2b2e35;
+$input-bg: #191919;
+$input-color: #6c6c6c;
+$navlist-color: #c8c8c8;
+
+.Footer {
+  width: 100%;
+  background-color: $dark-gray;
+  padding: 20px 60px 0 60px;
+  color: #fff;
+  margin-top: 38px;
+  border-radius: 4px 4px 0 0;
+
+  @include mobile {
+    padding: 0;
+    border-radius: 4px 4px 0 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 100px);
+
+    @include tablet {
+      grid-template-columns: repeat(1, 100%);
+      grid-template-rows: 80px 90px 90px 50px;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(1, 100%);
+      grid-template-rows: 80px 90px 90px 50px;
+    }
+
+    & > * {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    grid-row: 1 / 3;
+    align-items: flex-start;
+    padding-top: 25px;
+    padding-right: 25px;
+    cursor: pointer;
+
+    @include tablet {
+      padding: 20px 100px;
+      grid-row: 1;
+      justify-content: center;
+    }
+
+    @include mobile {
+      padding: 20px 100px;
+      grid-row: 1;
+      justify-content: center;
+    }
+
+    .Icon {
+      width: unset;
+      height: unset;
+      svg {
+        @include mobile {
+          width: 250px;
+          height: 42px;
+        }
+        width: 300px;
+        height: 51px;
+      }
+    }
+  }
+
+  &__subscribe {
+    grid-column: span 2;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-bottom: 1px solid $border-color;
+    // padding-left: 37px;
+
+    @include tablet {
+      grid-column: 1;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 10px;
+      font-weight: 600;
+      font-size: 10px;
+      width: 100%;
+    }
+
+    @include mobile {
+      grid-column: 1;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 10px;
+      font-weight: 600;
+      font-size: 10px;
+      width: 100%;
+    }
+  }
+
+  &__copyrights {
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 30px 0;
+    border-top: 1px solid $border-color;
+    letter-spacing: 2px;
+    margin-left: -40px;
+
+    @include tablet {
+      margin: 0;
+      padding: 10px 10px;
+    }
+
+    @include mobile {
+      margin: 0;
+      padding: 10px 10px;
+    }
+  }
+
+  &__input {
+    position: relative;
+    padding-bottom: 5px;
+
+    input {
+      width: 320px;
+      background-color: $input-bg;
+      color: $input-color;
+      border: 0;
+      height: 47px;
+      border-radius: 23.5px;
+      padding: 0 30px 0 22px;
+      font-size: 14px;
+      border: 1px solid transparent;
+      transition: $transition3;
+
+      @include tablet {
+        width: 270px;
+      }
+
+      @include mobile {
+        width: 270px;
+      }
+
+      &:focus {
+        border-color: $orange;
+        outline: 0;
+      }
+    }
+  }
+
+  &__input_button {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 11px;
+    right: 12px;
+    width: 27.5px;
+    height: 27.5px;
+  }
+
+  &__input_icon {
+    transform: rotate(180deg);
+
+    svg {
+      color: $orange;
+    }
+  }
+
+  &__input_error {
+    position: absolute;
+    left: 13px;
+    font-size: 9px;
+    color: $error;
+  }
+
+  &__navigation {
+    grid-column: 2;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // padding-left: 37px;
+
+    @include tablet {
+      grid-column: 1;
+      width: 100%;
+    }
+    @include mobile {
+      grid-column: 1;
+      width: 100%;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+
+    @include tablet {
+      .Footer__heading {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      .Footer__heading {
+        display: none;
+      }
+    }
+  }
+  &__heading {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 12px;
+  }
+
+  &__nav_list {
+    display: flex;
+    font-size: 14px;
+    margin: 0;
+
+    @include tablet {
+      font-size: 10px;
+    }
+
+    @include mobile {
+      font-size: 10px;
+    }
+
+    li {
+      border-right: 1px solid #fff;
+      padding: 0 21px;
+
+      @include tablet {
+        padding: 0 5px !important;
+      }
+
+      @include mobile {
+        padding: 0 5px !important;
+      }
+
+      a {
+        white-space: nowrap;
+        transition: $transition1;
+        color: $navlist-color;
+      }
+
+      &:hover {
+        a {
+          text-decoration: none;
+          color: $orange;
+        }
+      }
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        border-right: unset;
+        padding-right: unset;
+      }
+    }
+  }
+  &__socials {
+    align-items: flex-start;
+    justify-content: unset;
+    padding-left: 20px;
+    p {
+      margin-top: 20px;
+    }
+
+    @include tablet {
+      grid-row: 3;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-bottom: 1px solid $border-color;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    @include mobile {
+      grid-row: 3;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-bottom: 1px solid $border-color;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+  &__icons {
+    display: flex;
+  }
+  &__social_icon {
+    width: 31px;
+    height: 31px;
+    margin-right: 10px;
+    cursor: pointer;
+    color: white;
+
+    @include tablet {
+      width: 51px;
+      height: 51px;
+    }
+
+    @include mobile {
+      width: 51px;
+      height: 51px;
+    }
+    svg {
+      @include tablet {
+        width: 51px;
+      }
+
+      @include mobile {
+        width: 51px;
+      }
+      width: 61px;
+
+      path {
+        transition: $transition3;
+      }
+    }
+    &:hover {
+      svg {
+        fill: $orange;
+        path {
+          fill: $orange;
+        }
+      }
+    }
+  }
+}

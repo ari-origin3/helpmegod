@@ -1,0 +1,167 @@
+@import "../../../styles/lib";
+.ProductItem {
+  display: flex;
+  // height: 159px;
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid $border-gray;
+
+  @include mobile {
+    height: auto;
+    flex-direction: column;
+  }
+  .seasonLogo{
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    right: -10px;
+    bottom: 0px;
+  }
+
+  &__image {
+    position: relative;
+    width: 125px;
+    max-height: 140px;
+    margin-right: 20px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    @include mobile {
+      height: 130px;
+      width: 100%;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      img {
+        width: 200px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__wishlist_button {
+    position: absolute;
+    top: 7px;
+    left: -5px;
+  }
+
+  &__sale_label {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    background-color: $orange;
+    color: #fff;
+    font-weight: 600;
+  }
+  &__details {
+    flex: auto;
+    // display: flex;
+  }
+  &__brand {
+    background-color: $dark-gray;
+    padding: 2px 15px;
+    margin: 0;
+    color: $orange;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  &__info_wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left {
+    margin-left: 10px;
+    p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 24px;
+      color: $dark-gray;
+    }
+    @include mobile {
+      max-width: 60%;
+    }
+  }
+  &__right {
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  &__stars {
+    margin-bottom: 10px;
+    margin-top: -3px; //TODO:Remove after fixing issue with svg icon generator.
+  }
+  &__name_link {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &__name {
+    font-size: 18px !important;
+    font-weight: 600;
+    text-decoration: none !important;
+  }
+  &__attributes {
+    font-weight: 500;
+  }
+  &__stock_status {
+    font-size: 14px;
+    font-weight: 500;
+    color: $green !important;
+  }
+  &__stock_status--out {
+    color: $error !important;
+  }
+
+  &__quantity {
+    height: 30px;
+    .Select__control {
+      height: 30px;
+      min-height: unset;
+      padding: unset;
+    }
+    .Select__indicator {
+      position: absolute;
+      top: -1px;
+      right: -5px;
+      width: 30px;
+    }
+    .Select__value-container {
+      padding: 0 15px 0 10px;
+    }
+    .Select__single-value {
+      margin: 0;
+    }
+    .Select__placeholder {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    text-align: center;
+    background-color: $dark-gray;
+    padding: 1px 0;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+    transition: $transition1;
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+      background-color: lighten($dark-gray, 10);
+    }
+  }
+}
